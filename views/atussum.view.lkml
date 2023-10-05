@@ -2320,6 +2320,7 @@ view: atussum {
   measure: avg_sleep_hours {
     type: average
     sql: ${t_010101}/60 ;;
+    value_format_name: decimal_1
   }
 
   measure: avg_sleep_minutes {
@@ -2330,6 +2331,7 @@ view: atussum {
   measure: min_sleep_hours {
     type: min
     sql: ${t_010101}/60 ;;
+    value_format_name: decimal_1
   }
 
   measure: min_sleep_minutes {
@@ -2340,6 +2342,7 @@ view: atussum {
   measure: max_sleep_hours {
     type: max
     sql: ${t_010101}/60 ;;
+    value_format_name: decimal_1
   }
 
   measure: max_sleep_minutes {
