@@ -2368,4 +2368,22 @@ view: atussum {
     value_format_name: decimal_1
   }
 
+  measure: avg_socializing_relaxing_hours {
+    type: average
+    sql: ${t_129999}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: min_socializing_relaxing_hours {
+    type: min
+    sql: ${t_129999}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: max_socializing_relaxing_hours {
+    type: max
+    sql: ${t_129999}/60 ;;
+    value_format_name: decimal_1
+  }
+
 }
