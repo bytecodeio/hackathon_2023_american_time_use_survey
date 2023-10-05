@@ -2316,18 +2316,35 @@ view: atussum {
     type: count
   }
 
-  measure: avg_sleep {
+
+  measure: avg_sleep_hours {
+    type: average
+    sql: ${t_010101}/60 ;;
+  }
+
+  measure: avg_sleep_minutes {
     type: average
     sql: ${t_010101} ;;
   }
 
-  measure: min_sleep {
+  measure: min_sleep_hours {
+    type: min
+    sql: ${t_010101}/60 ;;
+  }
+
+  measure: min_sleep_minutes {
     type: min
     sql: ${t_010101} ;;
   }
 
-  measure: max_sleep {
+  measure: max_sleep_hours {
+    type: max
+    sql: ${t_010101}/60 ;;
+  }
+
+  measure: max_sleep_minutes {
     type: max
     sql: ${t_010101} ;;
   }
+
 }
