@@ -1226,6 +1226,7 @@ view: atuscps {
     description: "TUCASEID - Each Household"
     label: "TUCaseID - Each Household"
     type: number
+    primary_key: yes
     value_format_name: id
     sql: ${TABLE}.tucaseid ;;
   }
@@ -1235,6 +1236,9 @@ view: atuscps {
     sql: ${TABLE}.tulineno ;;
   }
   measure: count {
-    type: count
+    label: "Respondent Count"
+    description: "Count of Respondents"
+    type: count_distinct
+    sql_distinct_key: ${tucaseid} ;;
   }
 }
