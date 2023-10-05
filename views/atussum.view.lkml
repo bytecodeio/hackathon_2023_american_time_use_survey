@@ -35,6 +35,14 @@ view: atussum {
     type: average
     sql: ${_line} ;;  }
 
+
+  dimension: tucaseid {
+    primary_key: yes
+    type: number
+    value_format_name: id
+    sql: ${TABLE}.tucaseid ;;
+  }
+
   dimension: gemetsta {
     type: number
     sql: ${TABLE}.gemetsta ;;
@@ -2288,12 +2296,6 @@ view: atussum {
   dimension: tryhhchild {
     type: number
     sql: ${TABLE}.tryhhchild ;;
-  }
-
-  dimension: tucaseid {
-    type: number
-    value_format_name: id
-    sql: ${TABLE}.tucaseid ;;
   }
 
   dimension: tudiaryday {
