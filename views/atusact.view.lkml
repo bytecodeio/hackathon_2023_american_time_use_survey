@@ -35,6 +35,12 @@ view: atusact {
     type: average
     sql: ${_line} ;;  }
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${tucaseid},${tuactivity_n} ;;
+  }
+
   dimension: tewhere {
     type: number
     sql: ${TABLE}.tewhere ;;
