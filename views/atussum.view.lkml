@@ -2350,4 +2350,22 @@ view: atussum {
     sql: ${t_010101} ;;
   }
 
+  measure: avg_health_related_self_care_hours {
+    type: average
+    sql: ${t_010301}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: min_health_related_self_care_hours {
+    type: min
+    sql: ${t_010301}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: max_health_related_self_care_hours {
+    type: max
+    sql: ${t_010301}/60 ;;
+    value_format_name: decimal_1
+  }
+
 }
