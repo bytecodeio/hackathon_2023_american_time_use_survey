@@ -120,6 +120,7 @@ view: states {
   }
 
   dimension: fips_code {
+    primary_key: yes
     type: number
     sql: ${TABLE}.fips_code ;;
   }

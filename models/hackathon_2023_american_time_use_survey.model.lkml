@@ -32,7 +32,7 @@ explore: atussum {}
 explore: atusrostec {}
 
 explore: atuscps {
-
+  sql_always_where: ${tulineno} = 1 ;;
   join: atussum {
     type: left_outer
     relationship: many_to_one
