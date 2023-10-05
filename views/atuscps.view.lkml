@@ -36,6 +36,8 @@ view: atuscps {
     sql: ${_line} ;;  }
 
   dimension: gediv {
+    description: "Geographic division"
+    label: "Geographic Division"
     type: number
     sql: ${TABLE}.gediv ;;
   }
@@ -61,6 +63,8 @@ view: atuscps {
   }
 
   dimension: gestfips {
+    description: "FIPS state code"
+    label: "FIPS State Code"
     type: number
     sql: ${TABLE}.gestfips ;;
   }
@@ -71,6 +75,8 @@ view: atuscps {
   }
 
   dimension: hefaminc {
+    description: "Household Family Income"
+    label: "Family Income"
     type: number
     sql: ${TABLE}.hefaminc ;;
   }
@@ -1217,6 +1223,8 @@ view: atuscps {
   }
 
   dimension: tucaseid {
+    description: "TUCASEID - Each Household"
+    label: "TUCaseID - Each Household"
     type: number
     value_format_name: id
     sql: ${TABLE}.tucaseid ;;
