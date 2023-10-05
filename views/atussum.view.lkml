@@ -2313,4 +2313,19 @@ view: atussum {
   measure: count {
     type: count
   }
+
+  measure: avg_sleep {
+    type: average
+    sql: ${t_010101} ;;
+  }
+
+  measure: min_sleep {
+    type: min
+    sql: ${t_010101} ;;
+  }
+
+  measure: max_sleep {
+    type: max
+    sql: ${t_010101} ;;
+  }
 }
