@@ -1235,6 +1235,9 @@ view: atuscps {
     sql: ${TABLE}.tulineno ;;
   }
   measure: count {
-    type: count
+    label: "Respondent Count"
+    description: "Count of Respondents"
+    type: count_distinct
+    sql_distinct_key: ${tucaseid} ;;
   }
 }
