@@ -32,6 +32,13 @@ explore: atussum {}
 explore: atusrostec {}
 
 explore: atuscps {
+
+  join: atussum {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${atuscps.tucaseid} = ${atussum.tucaseid} ;;
+  }
+
   join: states {
     type: left_outer
     relationship: many_to_one
