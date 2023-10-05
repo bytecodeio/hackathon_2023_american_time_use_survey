@@ -31,7 +31,13 @@ explore: atussum {}
 
 explore: atusrostec {}
 
-explore: atuscps {}
+explore: atuscps {
+  join: states {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${atuscps.gestfips} = ${states.fips_code} ;;
+  }
+}
 
 explore: atuswho {}
 
@@ -44,4 +50,3 @@ explore: atusrost {}
 explore: codes {}
 
 explore: fivetran_audit {}
-
