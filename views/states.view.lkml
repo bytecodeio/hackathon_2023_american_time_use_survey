@@ -109,11 +109,13 @@ view: states {
 
   dimension: state_name {
     type: string
+    map_layer_name: us_states
     sql: ${TABLE}.state_name ;;
   }
 
   dimension: state_abbreviation {
     type: string
+    map_layer_name: us_states
     sql: ${TABLE}.state_abbreviation ;;
   }
 
