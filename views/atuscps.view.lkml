@@ -10,6 +10,14 @@ view: atuscps {
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
+dimension: PK_CPS  {
+  type: number
+  description: "Primary Key - tulineno + tucaseid"
+  label: "Primary Key"
+  primary_key: yes
+  sql: CONCAT(${tulineno},${tucaseid} ;;
+}
+
   dimension_group: _fivetran_synced {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
@@ -36,6 +44,8 @@ view: atuscps {
     sql: ${_line} ;;  }
 
   dimension: gediv {
+    description: "Geographic division"
+    label: "Geographic Division"
     type: number
     sql: ${TABLE}.gediv ;;
   }
@@ -61,6 +71,8 @@ view: atuscps {
   }
 
   dimension: gestfips {
+    description: "FIPS state code"
+    label: "FIPS State Code"
     type: number
     sql: ${TABLE}.gestfips ;;
   }
@@ -71,6 +83,8 @@ view: atuscps {
   }
 
   dimension: hefaminc {
+    description: "Household Family Income"
+    label: "Family Income"
     type: number
     sql: ${TABLE}.hefaminc ;;
   }
@@ -1217,16 +1231,23 @@ view: atuscps {
   }
 
   dimension: tucaseid {
+    description: "TUCASEID - Each Household"
+    label: "TUCaseID - Each Household"
     type: number
     value_format_name: id
     sql: ${TABLE}.tucaseid ;;
   }
 
   dimension: tulineno {
+    description: "Line Number"
+    label: "Line No"
     type: number
     sql: ${TABLE}.tulineno ;;
   }
   measure: count {
-    type: count
+    label: "Respondent Count"
+    description: "Count of Respondents"
+    type: count_distinct
+    sql: ${tucaseid} ;;
   }
 }

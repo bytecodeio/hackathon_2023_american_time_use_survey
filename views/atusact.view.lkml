@@ -35,6 +35,12 @@ view: atusact {
     type: average
     sql: ${_line} ;;  }
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${tucaseid},${tuactivity_n} ;;
+  }
+
   dimension: tewhere {
     type: number
     sql: ${TABLE}.tewhere ;;
@@ -51,17 +57,20 @@ view: atusact {
   }
 
   dimension: trtcc_ln {
+    description: "Total time spent during activity providing secondary child care for household and own nonhousehold children &lt; 13 (in minutes)"
     type: number
     sql: ${TABLE}.trtcc_ln ;;
   }
 
   dimension: trtcctot_ln {
+    description: "Total time spent during activity providing secondary childcare for all children < 13"
     type: number
     sql: ${TABLE}.trtcctot_ln ;;
   }
 
   dimension: trtcoc_ln {
-    type: number
+    description: "Total time spent during activity providing secondary child care for nonown, nonhousehold children &lt;13 (in minutes)"
+       type: number
     sql: ${TABLE}.trtcoc_ln ;;
   }
 
@@ -116,27 +125,32 @@ view: atusact {
   }
 
   dimension: tuactdur_24 {
+    description: "Duration of activity in minutes (last activity truncated at 4:00 a.m.). Allowable max and min values are 1440 and 1 respectively"
     type: number
     sql: ${TABLE}.tuactdur_24 ;;
   }
 
   dimension: tuactivity_n {
+    description: "Activity line number. Used in Activity File, Who File, EH Activity File"
     type: number
     sql: ${TABLE}.tuactivity_n ;;
   }
 
   dimension: tucaseid {
+    description: "ATUS Case ID (14-digit identifier)"
     type: number
     value_format_name: id
     sql: ${TABLE}.tucaseid ;;
   }
 
   dimension: tucc_5 {
+    description: "Was at least one of your own household children < 13"
     type: number
     sql: ${TABLE}.tucc_5 ;;
   }
 
   dimension: tucc_5_b {
+    description: "Was at least one of your non-own household children < 13"
     type: number
     sql: ${TABLE}.tucc_5_b ;;
   }
@@ -172,6 +186,7 @@ view: atusact {
   }
 
   dimension: tustarttim {
+    description: "Activity start time. Valid values range 00:00:00 - 24:00:00."
     type: string
     sql: ${TABLE}.tustarttim ;;
   }

@@ -35,6 +35,14 @@ view: atussum {
     type: average
     sql: ${_line} ;;  }
 
+
+  dimension: tucaseid {
+    primary_key: yes
+    type: number
+    value_format_name: id
+    sql: ${TABLE}.tucaseid ;;
+  }
+
   dimension: gemetsta {
     type: number
     sql: ${TABLE}.gemetsta ;;
@@ -2290,12 +2298,6 @@ view: atussum {
     sql: ${TABLE}.tryhhchild ;;
   }
 
-  dimension: tucaseid {
-    type: number
-    value_format_name: id
-    sql: ${TABLE}.tucaseid ;;
-  }
-
   dimension: tudiaryday {
     type: number
     sql: ${TABLE}.tudiaryday ;;
@@ -2313,4 +2315,57 @@ view: atussum {
   measure: count {
     type: count
   }
+
+
+  measure: avg_sleep_hours {
+    type: average
+    sql: ${t_010101}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: avg_sleep_minutes {
+    type: average
+    sql: ${t_010101} ;;
+  }
+
+  measure: min_sleep_hours {
+    type: min
+    sql: ${t_010101}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: min_sleep_minutes {
+    type: min
+    sql: ${t_010101} ;;
+  }
+
+  measure: max_sleep_hours {
+    type: max
+    sql: ${t_010101}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: max_sleep_minutes {
+    type: max
+    sql: ${t_010101} ;;
+  }
+
+  measure: avg_health_related_self_care_hours {
+    type: average
+    sql: ${t_010301}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: min_health_related_self_care_hours {
+    type: min
+    sql: ${t_010301}/60 ;;
+    value_format_name: decimal_1
+  }
+
+  measure: max_health_related_self_care_hours {
+    type: max
+    sql: ${t_010301}/60 ;;
+    value_format_name: decimal_1
+  }
+
 }
